@@ -1,14 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './home/index/index.component';
 
-import { MatGridListModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatMenuModule,
+  MatFormFieldModule,
+  MatButtonModule
+} from '@angular/material';
 
 const MATERIAL_MODULES = [
-  MatGridListModule
+  MatToolbarModule,
+  MatMenuModule,
+  MatFormFieldModule,
+  MatButtonModule
 ];
 
 @NgModule({
@@ -18,6 +27,7 @@ const MATERIAL_MODULES = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ...MATERIAL_MODULES
   ],

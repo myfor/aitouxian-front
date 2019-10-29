@@ -1,7 +1,24 @@
+<mat-toolbar color="primary">
+  <span class="title-main">爱偷闲
+      <span class="small">忙里偷闲</span>
+  </span>
+  
+</mat-toolbar>
+
+<div class="div-actions">
+  <button mat-stroked-button [matMenuTriggerFor]="menu" color="primary">排序</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>最新</button>
+    <button mat-menu-item>随机</button>
+  </mat-menu>
+</div>
+
 <div class="div-home-page">
-  <mat-grid-list cols="3">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-  </mat-grid-list>
+
+  <div class="div-content">
+    <div>
+      CONTENT
+    </div>
+  </div>
+
 </div>
