@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IndexComponent } from './home/index/index.component';
+import { ContentListComponent } from './home/content-list/content-list.component';
 
 import {
   MatToolbarModule,
@@ -23,7 +24,8 @@ const MATERIAL_MODULES = [
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    ContentListComponent
   ],
   imports: [
     BrowserModule,
