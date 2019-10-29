@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../../services/posts/post.service';
 
 @Component({
   selector: 'app-content-list',
@@ -9,12 +10,15 @@ export class ContentListComponent implements OnInit {
 
   list = [];
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit() {
   }
 
   more() {
-
+    this.postService.getContents(1, 10)
+      .subscribe((data) => {
+        return this.list = data;
+      });
   }
 }
