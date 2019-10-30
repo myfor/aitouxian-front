@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import "~@angular/material/prebuilt-themes/deeppurple-amber.css"; */
-@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
-/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+/* @import "~@angular/material/prebuilt-themes/pink-bluegrey.css"; */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* @import '@angular/material/prebuilt-themes/purple-green.css'; */
 
 * {
@@ -17,7 +17,6 @@ body {
   font-weight: 500;
   height: 100%;
   margin: auto !important;
-  background-color: #f9f9f9;
 }
 
 .h100 {
@@ -39,4 +38,9 @@ body {
 
 .div-progess-bar {
   margin: 2rem 0;
+}
+
+hr {
+  margin: 1rem 0;
+  border-color: #e0dddd;
 }

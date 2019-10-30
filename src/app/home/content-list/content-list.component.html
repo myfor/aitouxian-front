@@ -1,14 +1,43 @@
-<div class="div-actions">
-  <button mat-stroked-button [matMenuTriggerFor]="menu" color="primary">{{order}}</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="newestOrder()">最新</button>
-    <button mat-menu-item (click)="randomOrder()">随机</button>
-  </mat-menu>
+<div class="div-list-page">
+  <div class="div-actions">
+    <button mat-stroked-button [matMenuTriggerFor]="menu" color="primary">{{order}}</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="newestOrder()">最新</button>
+      <button mat-menu-item (click)="randomOrder()">随机</button>
+    </mat-menu>
+  </div>
+  <div class="div-list">
+    <div class="div-list-item" *ngFor="let content of list">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="div-list-header-image"
+            style="background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');">
+          </div>
+          <mat-card-title>{{content.author}}</mat-card-title>
+        </mat-card-header>
+        <img class="img-content-img" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          alt="Photo of a Shiba Inu" (click)="imgClick()">
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+          <p>
+            <span class="spn-date">
+              2019-08-08
+            </span>
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">LIKE</button>
+        </mat-card-actions>
+      </mat-card>
+      <hr>
+    </div>
+  </div>
+  <div class="div-progess-bar">
+    <mat-progress-bar mode="buffer" *ngIf="loading"></mat-progress-bar>
+  </div>
+  <button mat-raised-button color="primary" (click)="more()">看 更 多</button>
 </div>
-<div *ngFor="let content of list">
-  {{content.content}}
-</div>
-<div class="div-progess-bar">
-  <mat-progress-bar mode="buffer" *ngIf="loading"></mat-progress-bar>
-</div>
-<button mat-raised-button color="primary" (click)="more()">看 更 多</button>

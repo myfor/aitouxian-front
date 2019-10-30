@@ -30,17 +30,3 @@ export class PostService {
       );
   }
 }
-/**
- * 排序的枚举
- */
-export enum PostOrder
-{
-  /**
-   * 最新顺序排序
-   */
-  Newest = 1,
-  /**
-   * 随机排序
-   */
-  Random
-}

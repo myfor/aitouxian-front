@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService, PostOrder } from '../../services/posts/post.service';
-import { RequestContentsParams } from '../../services/posts/models';
+import { PostService } from '../../services/posts/post.service';
+import { RequestContentsParams, PostOrder, Content } from '../../services/posts/models';
 
 @Component({
   selector: 'app-content-list',
@@ -12,12 +12,16 @@ export class ContentListComponent implements OnInit {
   order: string = '排序: 最新';
   //  当前排序枚举
   currentOrder: PostOrder = PostOrder.Newest;
-  list = [];
+  list: Content[] = [];
   loading: boolean = false;
 
   constructor(private postService: PostService) { }
 
   ngOnInit() {
+    let params = new RequestContentsParams(
+      1, 10, this.currentOrder
+    )
+    this.getContents(params);
   }
 
   //  最新排序
@@ -59,6 +63,10 @@ export class ContentListComponent implements OnInit {
     )
 
     this.getMoreContents(params);
+  }
+
+  imgClick() {
+    alert('image clicked');
   }
 
   /**

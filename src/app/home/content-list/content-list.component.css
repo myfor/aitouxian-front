@@ -1,6 +1,37 @@
 .div-actions {
-    position: fixed;
-    right: 20%;
-    top: 5rem;
-  }
-  
+  position: fixed;
+  right: 20%;
+  top: 5rem;
+  z-index: 1;
+}
+
+.div-list-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-list {
+  height: 100%;
+}
+
+.div-list>.div-list-item {
+  height: 100%;
+  max-width: 30rem;
+  margin: 1rem 0;
+}
+
+.div-list-header-image {
+  cursor: pointer;
+  background-size: cover;
+}
+
+.img-content-img {
+  max-height: 25rem;
+  cursor: pointer;
+}
+
+.spn-date {
+
+}
