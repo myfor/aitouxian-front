@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,14 +12,16 @@ import {
   MatToolbarModule,
   MatMenuModule,
   MatFormFieldModule,
-  MatButtonModule
+  MatButtonModule,
+  MatProgressBarModule
 } from '@angular/material';
 
 const MATERIAL_MODULES = [
   MatToolbarModule,
   MatMenuModule,
   MatFormFieldModule,
-  MatButtonModule
+  MatButtonModule,
+  MatProgressBarModule
 ];
 
 @NgModule({
@@ -31,6 +34,7 @@ const MATERIAL_MODULES = [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     ...MATERIAL_MODULES
   ],
   providers: [],

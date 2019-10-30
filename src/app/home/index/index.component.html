@@ -4,20 +4,10 @@
   </span>
 </mat-toolbar>
 
-<div class="div-actions">
-  <button mat-stroked-button [matMenuTriggerFor]="menu" color="primary">{{order}}</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="newestOrder()">最新</button>
-    <button mat-menu-item (click)="randomOrder()">随机</button>
-  </mat-menu>
-</div>
-
 <div class="div-home-page">
 
   <div class="div-content">
-    <div>
-      <app-content-list></app-content-list>
-    </div>
+    <app-content-list class="w100"></app-content-list>
   </div>
 
 </div>
