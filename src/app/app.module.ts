@@ -17,7 +17,6 @@ import {
   MatCardModule,
   MatIconModule
 } from '@angular/material';
-import { NewComponent } from './home/new/new.component';
 
 const MATERIAL_MODULES = [
   MatToolbarModule,
@@ -33,8 +32,7 @@ const MATERIAL_MODULES = [
   declarations: [
     AppComponent,
     IndexComponent,
-    ContentListComponent,
-    NewComponent
+    ContentListComponent
   ],
   imports: [
     BrowserModule,
