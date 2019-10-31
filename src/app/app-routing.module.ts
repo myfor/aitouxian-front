@@ -4,7 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './home/index/index.component';
 
 const appRoutes: Routes = [
-  { path: '', component: IndexComponent }
+  {
+    path: 'new',
+    loadChildren: () => import('./new/new.module').then(mod => mod.NewModule)
+  },
+  { path: '', component: IndexComponent },
+  { path: "**", redirectTo: '' }
 ];
 
 @NgModule({

@@ -14,6 +14,7 @@ export class Content
     constructor(
         public id: number,
         public author: string,
+        public headerImg: string,
         public type: number,
         public content: string,
         public file: string,

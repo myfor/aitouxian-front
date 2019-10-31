@@ -14,3 +14,8 @@
   max-width: 40rem;
   margin-top: 3.5rem;
 }
+
+.btn-pulish {
+  position: absolute;
+  right: 1rem;
+}
