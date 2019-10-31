@@ -10,6 +10,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 0 .2rem 1rem .2rem;
+  border: 1px solid #dadada;
 }
 
 .div-list {
@@ -17,8 +21,6 @@
 }
 
 .div-list>.div-list-item {
-  /* height: 100%; */
-  min-width: 400px;
   margin: 1rem;
 }
 
@@ -31,6 +33,4 @@
   cursor: pointer;
 }
 
-.spn-date {
-
-}
+.spn-date {}
