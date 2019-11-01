@@ -2,11 +2,6 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { NewPostComponent } from '../new-post/new-post.component';
 
-// export interface DialogData {
-//   animal: string;
-//   name: string;
-// }
-
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -18,8 +13,7 @@ export class IndexComponent {
   
   newPost(): void {
     const dialogRef = this.dialog.open(NewPostComponent, {
-      width: '250px',
-      data: {name: 'name', animal: 'animal'}
+      width: '34rem'
     });
 
     dialogRef.afterClosed().subscribe(() => {
