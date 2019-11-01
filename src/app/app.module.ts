@@ -6,8 +6,9 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { IndexComponent, NewPostDialog } from './home/index/index.component';
+import { IndexComponent } from './home/index/index.component';
 import { ContentListComponent } from './home/content-list/content-list.component';
+import { NewPostComponent } from './home/new-post/new-post.component';
 
 import {
   MatToolbarModule,
@@ -36,7 +37,7 @@ const MATERIAL_MODULES = [
     AppComponent,
     IndexComponent,
     ContentListComponent,
-    NewPostDialog
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,7 @@ const MATERIAL_MODULES = [
   ],
   providers: [],
   entryComponents: [
-    NewPostDialog
+    NewPostComponent
   ],
   bootstrap: [AppComponent]
 })

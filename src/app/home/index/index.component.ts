@@ -1,10 +1,11 @@
-import { Component, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { NewPostComponent } from '../new-post/new-post.component';
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+// export interface DialogData {
+//   animal: string;
+//   name: string;
+// }
 
 @Component({
   selector: 'app-index',
@@ -13,39 +14,16 @@ export interface DialogData {
 })
 export class IndexComponent {
 
-  animal: string;
-  name: string;
-
   constructor(public dialog: MatDialog) { }
   
   newPost(): void {
-    const dialogRef = this.dialog.open(NewPostDialog, {
+    const dialogRef = this.dialog.open(NewPostComponent, {
       width: '250px',
-      data: {name: this.name, animal: this.animal}
+      data: {name: 'name', animal: 'animal'}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(() => {
       console.log('The dialog was closed');
-      this.animal = result;
     });
   }
-}
-
-/**
- * 新帖子弹窗
- */
-@Component({
-  selector: 'new-post-dialog',
-  templateUrl: 'new-post-dialog.html',
-})
-export class NewPostDialog {
-
-  constructor(
-    public dialogRef: MatDialogRef<NewPostDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
 }

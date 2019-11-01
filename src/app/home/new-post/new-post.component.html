@@ -5,6 +5,6 @@
     <input matInput [(ngModel)]="data.animal">
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()">关 闭</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial (click)="publish()">发 布</button>
 </div>
