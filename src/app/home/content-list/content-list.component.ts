@@ -70,6 +70,17 @@ export class ContentListComponent implements OnInit {
   }
 
   /**
+   * 刷新
+   */
+  refresh() {
+    this.list = [];
+    let params = new RequestContentsParams(
+      1, 10, this.currentOrder
+    )
+    this.getContents(params);
+  }
+
+  /**
    * 获取更多的列表内容
    * @param params 参数
    */

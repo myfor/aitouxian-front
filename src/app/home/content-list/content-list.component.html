@@ -1,5 +1,6 @@
 <div class="div-list-page">
   <div class="div-actions">
+    <button mat-stroked-button color="primary" (click)="refresh()" style="margin-right: 1rem;">刷 新</button>
     <button mat-stroked-button [matMenuTriggerFor]="menu" color="primary">{{order}}</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="newestOrder()">最新</button>
@@ -10,10 +11,6 @@
     <div class="div-list-item" *ngFor="let content of list">
       <mat-card>
         <mat-card-header style="margin-bottom: .5rem;">
-          <!-- <div mat-card-avatar class="div-list-header-image"
-            style="background-image: url({{content.headerImg}});">
-          </div> -->
-          <img mat-card-avatar class="div-list-header-image" src="{{content.headerImg}}" alt="头像">
           <mat-card-title>{{content.author}}</mat-card-title>
         </mat-card-header>
 

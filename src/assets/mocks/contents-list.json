@@ -8,7 +8,7 @@
     "list": [{
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -18,7 +18,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -28,7 +28,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -38,7 +38,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -48,7 +48,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -58,7 +58,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -68,7 +68,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -78,7 +78,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -88,7 +88,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -98,7 +98,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -108,7 +108,7 @@
       {
         "id": 1,
         "author": "奥巴马",
-        "headerImg": "https://material.angular.io/assets/img/examples/shiba1.jpg",
+
         "type": 1,
         "content": "奥巴马卸任",
         "file": "https://material.angular.io/assets/img/examples/shiba2.jpg",
