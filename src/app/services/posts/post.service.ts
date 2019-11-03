@@ -21,13 +21,14 @@ export class PostService {
    */
   getContents(params: RequestContentsParams): Observable<Result<Paginator<Content>>> {
 
-    const qs = new HttpParams();
-    qs.append('index', params.index.toString());
-    qs.append('rows', params.rows.toString());
-    qs.append('order', params.order.toString());
+    const qs = new HttpParams()
+      .set('index', params.index.toString())
+      .set('rows', params.rows.toString())
+      .set('order', params.order.toString());
 
-    const url = '/api/posts';
-    return this.http.get<Result<Paginator>>(url, { params: qs })
+    const url = `/api/posts?${qs.toString()}`;
+
+    return this.http.get<Result<Paginator>>(url)
       .pipe(
         debounceTime(500),
         retry(3),
