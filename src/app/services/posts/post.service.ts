@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { RequestContentsParams } from './models';
-import { Observable, of } from 'rxjs';
+import { RequestContentsParams, NewPostParams, Content } from './models';
+import { Observable } from 'rxjs';
 import { retry, catchError, debounceTime } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Result, Paginator, ServicesBase } from '../common';
@@ -19,14 +19,14 @@ export class PostService {
    * @param index 当前页码
    * @param rows 获取行数
    */
-  getContents(params: RequestContentsParams): Observable<Result<Paginator>> {
-    
+  getContents(params: RequestContentsParams): Observable<Result<Paginator<Content>>> {
+
     const qs = new HttpParams();
     qs.append('index', params.index.toString());
     qs.append('rows', params.rows.toString());
     qs.append('order', params.order.toString());
 
-    const url = 'assets/mocks/contents-list.json';
+    const url = '/api/posts';
     return this.http.get<Result<Paginator>>(url, { params: qs })
       .pipe(
         debounceTime(500),
@@ -36,20 +36,19 @@ export class PostService {
   }
 
   //  发布新图
-  newPost(description: string, file: any): Observable<Result> {
-    let form = new FormData();
-    form.append('file', file, file.name);
-    form.append('description', description);
+  newPost(newPost: NewPostParams): Observable<Result> {
+    const form = new FormData();
+    form.append('author', newPost.author);
+    form.append('file', newPost.file, newPost.file.name);
+    form.append('description', newPost.description);
 
-    const url = '';
-    
+    const url = '/api/posts';
+
     return this.http.post<Result<string>>(url, form)
       .pipe(
         debounceTime(500),
         retry(2),
         catchError(ServicesBase.handleError)
       );
-
-    // return of(new Result('', {}));
   }
 }

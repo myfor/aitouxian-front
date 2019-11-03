@@ -14,7 +14,7 @@ export class ServicesBase {
               `body was: ${error.error}`);
           }
           // return an observable with a user-facing error message
-          return throwError(
+        return throwError(
             'Something bad happened; please try again later.');
     }
 }
@@ -22,21 +22,19 @@ export class ServicesBase {
 /**
  * 返回数据类型
  */
-export class Result<T=any>
-{
+export class Result<T= any> {
     constructor(
         public message: string,
         public data: T
     ) {}
 }
 
-export class Paginator
-{
+export class Paginator<T = any> {
     constructor(
         public index: number,
         public rows: number,
         public totalRows: number,
         public totalPages: number,
-        public list: []
+        public list: T[]
     ) {}
 }

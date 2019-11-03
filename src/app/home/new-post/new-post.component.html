@@ -1,14 +1,16 @@
 <h1 mat-dialog-title>发 布 新 帖</h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
+    <mat-form-field class="w100">
+        <input type="text" matInput [(ngModel)]="author" placeholder="昵称" maxlength="50"/>
+      </mat-form-field>
   <mat-form-field class="w100">
-    <textarea matInput rows="2" [(ngModel)]="description" placeholder="描述"></textarea>
+    <textarea matInput rows="2" [(ngModel)]="description" placeholder="描述(最多500字)" maxlength="500"></textarea>
   </mat-form-field>
-  <input type="file" #files mat-button (change)="fileChange()" accept=".png,.jpg,.jpeg,.gif,.bmp" />
+  <input class="inp-file" type="file" #files mat-button (change)="fileChange()" accept=".png,.jpg,.jpeg,.gif,.bmp" />
 
   <div class="div-preview">
-    <img #preview src="" alt="图片预览" height="250px" [hidden]="!selectedFiles" required>
-    <mat-error *ngIf="!selectedFiles">
+    <img #preview src="" alt="图片预览" height="250px" [hidden]="!selectedFile" required>
+    <mat-error *ngIf="!selectedFile">
       <strong>给张图片</strong>
     </mat-error>
   </div>

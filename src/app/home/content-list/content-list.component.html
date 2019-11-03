@@ -10,26 +10,25 @@
   <div class="div-list">
     <div class="div-list-item" *ngFor="let content of list">
       <mat-card>
-        <mat-card-header style="margin-bottom: .5rem;">
+        <mat-card-header>
           <mat-card-title>{{content.author}}</mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
           <p>
-            {{content.content}}
+            {{content.description}}
           </p>
 
         </mat-card-content>
-        <img class="img-content-img" mat-card-image src="{{content.file}}"
-          alt="Photo of a Shiba Inu" (click)="imgClick()">
-
+        <img class="img-content-img" mat-card-image src="{{content.thumbnailPath}}"
+          alt="Photo of a Shiba Inu" (click)="imgClick($event ,content.sourceFilePath)">
         <p>
           <span class="spn-date">
-            {{content.dateTime}}
+            {{content.publishDateTime}}
           </span>
         </p>
         <mat-card-actions>
-          <button mat-raised-button color="primary">LIKE : {{content.like}}</button>
+          <button mat-raised-button color="primary" (click)="like(content.id)">LIKE : {{content.likes}}</button>
         </mat-card-actions>
       </mat-card>
 

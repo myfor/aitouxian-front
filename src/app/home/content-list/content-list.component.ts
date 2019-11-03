@@ -9,32 +9,32 @@ import { RequestContentsParams, PostOrder, Content } from '../../services/posts/
 })
 export class ContentListComponent implements OnInit {
   //  当前排序描述
-  order: string = '排序: 最新';
+  order = '排序: 最新';
   //  当前排序枚举
   currentOrder: PostOrder = PostOrder.Newest;
   list: Content[] = [];
-  loading: boolean = false;
+  loading = false;
 
   constructor(private postService: PostService) { }
 
   ngOnInit() {
-    let params = new RequestContentsParams(
+    const params = new RequestContentsParams(
       1, 10, this.currentOrder
-    )
+    );
     this.getContents(params);
   }
 
   //  最新排序
   newestOrder() {
-    const NEWEST_ORDER: string = '排序: 最新';
+    const NEWEST_ORDER = '排序: 最新';
     if (this.order === NEWEST_ORDER) {
       return;
     }
     this.currentOrder = PostOrder.Newest;
 
-    let params = new RequestContentsParams(
+    const params = new RequestContentsParams(
       1, 10, this.currentOrder
-    )
+    );
 
     this.getContents(params);
 
@@ -42,15 +42,15 @@ export class ContentListComponent implements OnInit {
   }
 
   randomOrder() {
-    const RANDOM_ORDER: string = '排序: 随机';
+    const RANDOM_ORDER = '排序: 随机';
     if (this.order === RANDOM_ORDER) {
       return;
     }
     this.currentOrder = PostOrder.Random;
 
-    let params = new RequestContentsParams(
+    const params = new RequestContentsParams(
       1, 10, this.currentOrder
-    )
+    );
 
     this.getContents(params);
 
@@ -58,15 +58,17 @@ export class ContentListComponent implements OnInit {
   }
 
   more() {
-    let params = new RequestContentsParams(
+    const params = new RequestContentsParams(
       1, 10, this.currentOrder
-    )
+    );
 
     this.getMoreContents(params);
   }
 
-  imgClick() {
-    alert('image clicked');
+  imgClick(event: Event, path: string) {
+    console.log(event);
+    // event.target.src = path;
+    alert(path);
   }
 
   /**
@@ -74,9 +76,9 @@ export class ContentListComponent implements OnInit {
    */
   refresh() {
     this.list = [];
-    let params = new RequestContentsParams(
+    const params = new RequestContentsParams(
       1, 10, this.currentOrder
-    )
+    );
     this.getContents(params);
   }
 
@@ -88,7 +90,7 @@ export class ContentListComponent implements OnInit {
     this.loading = true;
     this.postService.getContents(params)
       .subscribe((data) => {
-        const list = data.data.list
+        const list = data.data.list;
         this.list.push(...list);
         this.loading = false;
       });
@@ -102,9 +104,17 @@ export class ContentListComponent implements OnInit {
     this.loading = true;
     this.postService.getContents(params)
       .subscribe((data) => {
-        const list = data.data.list
+        const list = data.data.list;
         this.list = list;
         this.loading = false;
     });
+  }
+
+  /**
+   * 
+   * @param id 点赞
+   */
+  like(id: number) {
+    console.log(id);
   }
 }
