@@ -65,10 +65,9 @@ export class ContentListComponent implements OnInit {
     this.getMoreContents(params);
   }
 
-  imgClick(event: Event, path: string) {
-    console.log(event);
+  imgClick(id: number, path: string) {
     // event.target.src = path;
-    alert(path);
+    document.getElementById('img_' + id);
   }
 
   /**

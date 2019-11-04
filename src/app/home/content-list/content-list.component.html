@@ -20,8 +20,10 @@
           </p>
 
         </mat-card-content>
-        <img class="img-content-img" mat-card-image src="{{content.thumbnailPath}}"
-          alt="Photo of a Shiba Inu" (click)="imgClick($event ,content.sourceFilePath)">
+
+        <img class="img-content-img" id="img_{{content.id}}" mat-card-image src="{{content.thumbnailPath}}"
+          alt="Photo of a Shiba Inu" (click)="imgClick(content.id, content.sourceFilePath)">
+
         <p>
           <span class="spn-date">
             {{content.publishDateTime}}
