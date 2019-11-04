@@ -7,8 +7,9 @@ export class Content {
      * @param author 作者
      * @param type 内容类型
      * @param description 描述
+     * @param currentPath 当前显示的路径
      * @param thumbnailPath 缩略图
-     * @param SourceFilePath 文件
+     * @param sourceFilePath 文件
      * @param publishDateTime 发布时间
      * @param likes 点赞数
      */
@@ -17,8 +18,9 @@ export class Content {
         public author: string,
         public description: string,
         public type: number,
+        public currentPath: string,
         public thumbnailPath: string,
-        public SourceFilePath: string,
+        public sourceFilePath: string,
         public publishDateTime: string,
         public likes: number
     ) {}

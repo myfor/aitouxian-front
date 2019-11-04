@@ -65,9 +65,13 @@ export class ContentListComponent implements OnInit {
     this.getMoreContents(params);
   }
 
-  imgClick(id: number, path: string) {
-    // event.target.src = path;
-    document.getElementById('img_' + id);
+  imgClick(index: number, path: string) {
+    const currentImg = this.list[index];
+    if (currentImg.currentPath === currentImg.thumbnailPath) {
+      currentImg.currentPath = currentImg.sourceFilePath;
+    } else {
+      currentImg.currentPath = currentImg.thumbnailPath;
+    }
   }
 
   /**

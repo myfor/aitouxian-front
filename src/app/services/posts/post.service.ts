@@ -26,7 +26,8 @@ export class PostService {
       .set('rows', params.rows.toString())
       .set('order', params.order.toString());
 
-    const url = `/api/posts?${qs.toString()}`;
+    // const url = `/api/posts?${qs.toString()}`;
+    const url = 'assets/mocks/content-list-mock.json';
 
     return this.http.get<Result<Paginator>>(url)
       .pipe(

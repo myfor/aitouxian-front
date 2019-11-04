@@ -1,0 +1,33 @@
+{
+    "message": "成功",
+    "data": {
+        "index": 1,
+        "rows": 10,
+        "totalRows": 10,
+        "totalPages": 10,
+        "list": [
+            {
+                "id": 1,
+                "author": "奥玛吧",
+                "description": "气的脸都黑了",
+                "type": 1,
+                "currentPath": "http://wx4.sinaimg.cn/large/00745YaMgy1g8lqioeafaj315o0n9gsj.jpg",
+                "thumbnailPath": "http://wx4.sinaimg.cn/large/00745YaMgy1g8lqioeafaj315o0n9gsj.jpg",
+                "sourceFilePath": "http://wx2.sinaimg.cn/large/00745YaMgy1g8lqinu8txj315o0n9thp.jpg",
+                "publishDateTime": "2019-08-09",
+                "likes": 10090
+            },
+            {
+                "id": 2,
+                "author": "川普",
+                "description": "气的脸都傻了",
+                "type": 1,
+                "currentPath": "http://wx4.sinaimg.cn/large/00745YaMgy1g8lqioeafaj315o0n9gsj.jpg",
+                "thumbnailPath": "http://wx4.sinaimg.cn/large/00745YaMgy1g8lqioeafaj315o0n9gsj.jpg",
+                "sourceFilePath": "http://wx2.sinaimg.cn/large/00745YaMgy1g8lqinu8txj315o0n9thp.jpg",
+                "publishDateTime": "2019-08-09",
+                "likes": 10090
+            }
+        ]
+    }
+}
