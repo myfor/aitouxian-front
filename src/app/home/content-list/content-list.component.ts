@@ -65,7 +65,7 @@ export class ContentListComponent implements OnInit {
     this.getMoreContents(params);
   }
 
-  imgClick(index: number, path: string) {
+  imgClick(index: number) {
     const currentImg = this.list[index];
     if (currentImg.currentPath === currentImg.thumbnailPath) {
       currentImg.currentPath = currentImg.sourceFilePath;
