@@ -26,13 +26,13 @@ export class PostService {
       .set('rows', params.rows.toString())
       .set('order', params.order.toString());
 
-    // const url = `/api/posts?${qs.toString()}`;
-    const url = 'assets/mocks/content-list-mock.json';
+    const url = `/api/posts?${qs.toString()}`;
+    // const url = 'assets/mocks/content-list-mock.json';
 
     return this.http.get<Result<Paginator>>(url)
       .pipe(
         debounceTime(500),
-        retry(3),
+        retry(2),
         catchError(ServicesBase.handleError)
       );
   }
@@ -49,7 +49,7 @@ export class PostService {
     return this.http.post<Result<string>>(url, form)
       .pipe(
         debounceTime(500),
-        retry(2),
+        retry(1),
         catchError(ServicesBase.handleError)
       );
   }

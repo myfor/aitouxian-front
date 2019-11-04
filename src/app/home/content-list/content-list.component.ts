@@ -65,13 +65,15 @@ export class ContentListComponent implements OnInit {
     this.getMoreContents(params);
   }
 
+  /**
+   * 点击切换图片
+   * @param index 索引
+   */
   imgClick(index: number) {
     const currentImg = this.list[index];
-    if (currentImg.currentPath === currentImg.thumbnailPath) {
-      currentImg.currentPath = currentImg.sourceFilePath;
-    } else {
-      currentImg.currentPath = currentImg.thumbnailPath;
-    }
+    currentImg.currentPath = 
+      currentImg.currentPath === currentImg.thumbnailPath ? 
+      currentImg.currentPath : currentImg.thumbnailPath
   }
 
   /**
@@ -93,7 +95,7 @@ export class ContentListComponent implements OnInit {
     this.loading = true;
     this.postService.getContents(params)
       .subscribe((data) => {
-        const list = data.data.list;
+        const list = this.setCurrentPath(data.data.list);        
         this.list.push(...list);
         this.loading = false;
       });
@@ -107,10 +109,20 @@ export class ContentListComponent implements OnInit {
     this.loading = true;
     this.postService.getContents(params)
       .subscribe((data) => {
-        const list = data.data.list;
+        const list = this.setCurrentPath(data.data.list);
         this.list = list;
         this.loading = false;
     });
+  }
+
+  /**
+   * 获取到列表数据后初始化当前显示的图片
+   */
+  private setCurrentPath(contents: Content[]): Content[] {
+    contents.forEach(content => {
+      content.currentPath = content.thumbnailPath;
+    });
+    return contents;
   }
 
   /**
