@@ -12,6 +12,7 @@ export class ContentListComponent implements OnInit {
   order = '排序: 最新';
   //  当前排序枚举
   currentOrder: PostOrder = PostOrder.Newest;
+  currentIndex = 1;
   list: Content[] = [];
   loading = false;
 
@@ -59,7 +60,7 @@ export class ContentListComponent implements OnInit {
 
   more() {
     const params = new RequestContentsParams(
-      1, 10, this.currentOrder
+      this.currentIndex, 10, this.currentOrder
     );
 
     this.getMoreContents(params);
@@ -71,9 +72,9 @@ export class ContentListComponent implements OnInit {
    */
   imgClick(index: number) {
     const currentImg = this.list[index];
-    currentImg.currentPath = 
-      currentImg.currentPath === currentImg.thumbnailPath ? 
-      currentImg.currentPath : currentImg.thumbnailPath
+    currentImg.currentPath =
+      currentImg.currentPath === currentImg.thumbnailPath ?
+      currentImg.currentPath : currentImg.thumbnailPath;
   }
 
   /**
@@ -81,8 +82,9 @@ export class ContentListComponent implements OnInit {
    */
   refresh() {
     this.list = [];
+    this.currentIndex = 1;
     const params = new RequestContentsParams(
-      1, 10, this.currentOrder
+      this.currentIndex, 10, this.currentOrder
     );
     this.getContents(params);
   }
@@ -95,9 +97,10 @@ export class ContentListComponent implements OnInit {
     this.loading = true;
     this.postService.getContents(params)
       .subscribe((data) => {
-        const list = this.setCurrentPath(data.data.list);        
+        const list = this.setCurrentPath(data.data.list);
         this.list.push(...list);
         this.loading = false;
+        this.currentIndex++;
       });
   }
 
@@ -126,10 +129,17 @@ export class ContentListComponent implements OnInit {
   }
 
   /**
-   * 
-   * @param id 点赞
+   * 点赞
+   * @param id ID
    */
-  like(id: number) {
-    console.log(id);
+  like(id: number, index: number) {
+    this.postService.like(id)
+      .subscribe((resp) => {
+        if (resp.status === 200) {
+          this.list[index].likes++;
+        } else {
+          console.log('liked faulted.');
+        }
+      });
   }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { RequestContentsParams, NewPostParams, Content } from './models';
 import { Observable } from 'rxjs';
 import { retry, catchError, debounceTime } from 'rxjs/operators';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Result, Paginator, ServicesBase } from '../common';
 
 @Injectable({
@@ -47,6 +47,21 @@ export class PostService {
     const url = '/api/posts';
 
     return this.http.post<Result<string>>(url, form)
+      .pipe(
+        debounceTime(500),
+        retry(1),
+        catchError(ServicesBase.handleError)
+      );
+  }
+
+  /**
+   * 点赞
+   * @param id 点赞的 ID
+   */
+  like(id: number): Observable<HttpResponse<Result>> {
+    const url = `/api/posts/like/${id}`;
+
+    return this.http.put<Result>(url, '', { observe: 'response' })
       .pipe(
         debounceTime(500),
         retry(1),
