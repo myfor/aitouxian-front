@@ -21,8 +21,8 @@
 
         </mat-card-content>
 
-        <img class="img-content-img" id="img_{{content.id}}" mat-card-image src="{{content.currentPath}}"
-          alt="Photo of a Shiba Inu" (click)="imgClick(i)">
+        <img class="img-content-img" id="img_{{content.id}}" src="{{content.currentPath}}"
+          alt="phone" (click)="imgClick(i)">
 
         <p>
           <span class="spn-date">
@@ -33,9 +33,7 @@
           <button mat-raised-button color="primary" (click)="like(content.id, i)">LIKE : {{content.likes}}</button>
         </mat-card-actions>
       </mat-card>
-
       <hr>
-
     </div>
   </div>
   <div class="div-progess-bar">

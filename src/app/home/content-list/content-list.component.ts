@@ -20,7 +20,7 @@ export class ContentListComponent implements OnInit {
 
   ngOnInit() {
     const params = new RequestContentsParams(
-      1, 10, this.currentOrder
+      this.currentIndex, 10, this.currentOrder
     );
     this.getContents(params);
   }
@@ -74,7 +74,7 @@ export class ContentListComponent implements OnInit {
     const currentImg = this.list[index];
     currentImg.currentPath =
       currentImg.currentPath === currentImg.thumbnailPath ?
-      currentImg.currentPath : currentImg.thumbnailPath;
+      currentImg.sourceFilePath : currentImg.thumbnailPath;
   }
 
   /**
@@ -115,6 +115,7 @@ export class ContentListComponent implements OnInit {
         const list = this.setCurrentPath(data.data.list);
         this.list = list;
         this.loading = false;
+        this.currentIndex++;
     });
   }
 
@@ -138,7 +139,7 @@ export class ContentListComponent implements OnInit {
         if (resp.status === 200) {
           this.list[index].likes++;
         } else {
-          console.log('liked faulted.');
+          console.log(resp.status);
         }
       });
   }
